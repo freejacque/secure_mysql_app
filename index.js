@@ -8,3 +8,5 @@ var mysql = require('mysql'),
 
 // Start a web server on port 8888. Requests go to function handleRequest
 
+http.createServer(handleRequest).listen(8888);
+
