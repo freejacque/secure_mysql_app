@@ -10,3 +10,4 @@ var mysql = require('mysql'),
 
 http.createServer(handleRequest).listen(8888);
 
+// handles http Requests
