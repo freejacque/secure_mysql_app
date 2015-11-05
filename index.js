@@ -11,3 +11,29 @@ var mysql = require('mysql'),
 http.createServer(handleRequest).listen(8888);
 
 // handles http Requests
+
+function handleRequest(request, response) {
+
+  var pageContent = '<html>' +
+                    '<head>' +
+                    '<meta http-equiv="Content-Type" ' +
+                    'content="text/html; charset=UTF-8" />' +
+                    '</head>' +
+                    '<body>' +
+                    '<form action="/add" method="post">' +
+                    '<input type="text" name="content">' +
+                    '<input type="submit" value="Add content" />' +
+                    '</form>' +
+                    '<div>' +
+                    '<strong>Content in database:</strong>' +
+                    '<pre>' +
+                    'DBCONTENT' +
+                    '</pre>' +
+                    '</div>' +
+                    '<form action="/" method="get">' +
+                    '<input type="text" name="q">' +
+                    '<input type="submit" value=Filter content" />' +
+                    '</form>' +
+                    '</body>' +
+                    '</html>';
+}
