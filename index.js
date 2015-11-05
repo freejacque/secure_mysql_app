@@ -37,4 +37,21 @@ function handleRequest(request, response) {
 
   // parse to distinguish between "/" and "/add" url paths
   var pathname = url.parse(request.url).pathname;
+
+  if(pathname === '/add') {
+    var requestBody = '';
+    var postParameters;
+    request.on('data', function(data) {
+      requestBody += data;
+    });
+    request.on('end', function() {
+      postParameters = querystring.parse(requestBody);
+      addContentToDatabase(postParameters.content, function() {
+        response.writeHead(302, {'Location': '/'});
+        response.end();
+      });
+    });
+
+
+  }
 }
