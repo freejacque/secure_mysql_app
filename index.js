@@ -5,15 +5,13 @@ var mysql = require('mysql'),
     url   = require('url'),
     querystring = require('querystring');
 
-
 // Start a web server on port 8888. Requests go to function handleRequest
-
 http.createServer(handleRequest).listen(8888);
 
 // handles http Requests
-
 function handleRequest(request, response) {
 
+  // HTML as a long string, DBCONTENT is a placeholder for db data
   var pageContent = '<html>' +
                     '<head>' +
                     '<meta http-equiv="Content-Type" ' +
