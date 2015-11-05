@@ -38,6 +38,7 @@ function handleRequest(request, response) {
   // parse to distinguish between "/" and "/add" url paths
   var pathname = url.parse(request.url).pathname;
 
+  // post request to "/add"
   if(pathname === '/add') {
     var requestBody = '';
     var postParameters;
