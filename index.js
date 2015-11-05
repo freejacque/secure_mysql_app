@@ -34,4 +34,7 @@ function handleRequest(request, response) {
                     '</form>' +
                     '</body>' +
                     '</html>';
+
+  // parse to distinguish between "/" and "/add" url paths
+  var pathname = url.parse(request.url).pathname;
 }
