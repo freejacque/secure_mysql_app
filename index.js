@@ -38,7 +38,7 @@ function handleRequest(request, response) {
   // parse to distinguish between "/" and "/add" url paths
   var pathname = url.parse(request.url).pathname;
 
-  // post request to "/add"
+  // POST request to "/add"
   if(pathname === '/add') {
     var requestBody = '';
     var postParameters;
@@ -54,6 +54,7 @@ function handleRequest(request, response) {
         response.end();
       });
     });
+    // GET request to "/"
   } else {
     var filter = querystring.parse(url.parse(request.url).query).q;
     getContentsFromDatabase(filter, function(contents) {
