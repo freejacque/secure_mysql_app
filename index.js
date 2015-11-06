@@ -47,7 +47,7 @@ function handleRequest(request, response) {
     });
     request.on('end', function() {
       postParameters = querystring.parse(requestBody);
-      //  the post parameter "content" holds the content to be added
+      //  the POST parameter "content" holds the content to be added
       addContentToDatabase(postParameters.content, function() {
         // redirect to "/" when new content is added to the db
         response.writeHead(302, {'Location': '/'});
@@ -56,6 +56,7 @@ function handleRequest(request, response) {
     });
     // GET request to "/"
   } else {
+    //  text used for filtering in in GET parameter "q"
     var filter = querystring.parse(url.parse(request.url).query).q;
     getContentsFromDatabase(filter, function(contents) {
       response.writeHead(200, {'Content-Type': 'text/html'});
