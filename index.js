@@ -60,7 +60,8 @@ function handleRequest(request, response) {
     var filter = querystring.parse(url.parse(request.url).query).q;
     getContentsFromDatabase(filter, function(contents) {
       response.writeHead(200, {'Content-Type': 'text/html'});
-      response.write(pageContent.replace('DBCONTENT, contents'));
+      // DBCONTENT is replaced with data from db (do not do this in real app, use a template)
+      response.write(pageContent.replace('DBCONTENT', contents));
       response.end();
     });
   }
