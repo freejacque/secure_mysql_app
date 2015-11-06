@@ -49,6 +49,7 @@ function handleRequest(request, response) {
       postParameters = querystring.parse(requestBody);
       //  the post parameter "content" holds the content to be added
       addContentToDatabase(postParameters.content, function() {
+        // redirect to "/" when new content is added to the db
         response.writeHead(302, {'Location': '/'});
         response.end();
       });
