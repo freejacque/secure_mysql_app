@@ -47,6 +47,7 @@ function handleRequest(request, response) {
     });
     request.on('end', function() {
       postParameters = querystring.parse(requestBody);
+      //  the post parameter "content" holds the content to be added
       addContentToDatabase(postParameters.content, function() {
         response.writeHead(302, {'Location': '/'});
         response.end();
