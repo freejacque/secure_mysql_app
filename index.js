@@ -73,4 +73,14 @@ function getContentsFromDatabase(filter, callback) {
     password: 'root',
     database: 'node'
   });
+  var query;
+  var resultsAsString = '';
+
+  if(filter) {
+    query = connection.query( 'SELECT id, content FROM test ' +
+                              'WHERE content LIKE "' + filter + '%"');
+  } else {
+    query = connection.query('SELECT id, content FROM test');
+  }
+
 }
