@@ -66,6 +66,9 @@ function handleRequest(request, response) {
     });
   }
 }
+
+// called by the function that handles the "/" route.
+// retrieves info from the db & applies the LIKE filter if one is used in the query
 function getContentsFromDatabase(filter, callback) {
   var connection = mysql.createConnection({
     host: 'localhost',
