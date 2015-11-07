@@ -92,5 +92,10 @@ function getContentsFromDatabase(filter, callback) {
     resultsAsString += 'id: ' + result.id;
     resultsAsString += ', content: ' + result.content;
     resultsAsString += '\n';
-  })
+  });
+
+  query.on('end', function(result) {
+    connection.end();
+    callback(resultsAsString);
+  });
 }
