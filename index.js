@@ -56,7 +56,7 @@ function handleRequest(request, response) {
     });
     // GET request to "/"
   } else {
-    //  text used for filtering in in GET parameter "q"
+    //  text used for filtering in GET parameter "q"
     var filter = querystring.parse(url.parse(request.url).query).q;
     getContentsFromDatabase(filter, function(contents) {
       response.writeHead(200, {'Content-Type': 'text/html'});
