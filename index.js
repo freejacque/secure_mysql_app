@@ -116,5 +116,11 @@ function addContentToDatabase(content, callback) {
     database: 'node'
   });
 
-
+  connection.query('INSERT INTO test (content) ' + 'VALUES ("' + content + '")',
+    function(err) {
+      if(err) {
+        console.log('Could not insert content "' + content + '" into database.');
+      }
+      callback();
+    });
 }
