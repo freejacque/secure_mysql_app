@@ -87,4 +87,10 @@ function getContentsFromDatabase(filter, callback) {
     console.log('A database error occurred:');
     console.log(err);
   });
+
+  query.on('result', function(result) {
+    resultsAsString += 'id: ' + result.id;
+    resultsAsString += ', content: ' + result.content;
+    resultsAsString += '\n';
+  })
 }
