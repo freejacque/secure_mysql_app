@@ -72,6 +72,7 @@ function handleRequest(request, response) {
 function getContentsFromDatabase(filter, callback) {
   var connection = mysql.createConnection({
     host: 'localhost',
+    port: 3307,
     user: 'root',
     password: 'root',
     database: 'node'
@@ -104,4 +105,16 @@ function getContentsFromDatabase(filter, callback) {
     connection.end();
     callback(resultsAsString);
   });
+}
+
+function addContentToDatabase(content, callback) {
+  var connection = mysql.createConnection({
+    host: 'localhost',
+    port: 3307,
+    user: 'root',
+    password: 'root',
+    database: 'node'
+  });
+
+
 }
