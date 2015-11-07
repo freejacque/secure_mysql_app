@@ -67,7 +67,7 @@ function handleRequest(request, response) {
   }
 }
 
-// called by the function that handles the "/" route.
+// called by the code that handles the "/" route.
 // retrieves info from the db & applies the LIKE filter if one is used in the query
 function getContentsFromDatabase(filter, callback) {
   var connection = mysql.createConnection({
@@ -107,6 +107,8 @@ function getContentsFromDatabase(filter, callback) {
   });
 }
 
+// called by the code that handles the "/add" route
+// inserts the string as a new content entry
 function addContentToDatabase(content, callback) {
   var connection = mysql.createConnection({
     host: 'localhost',
