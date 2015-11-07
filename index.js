@@ -98,6 +98,8 @@ function getContentsFromDatabase(filter, callback) {
     resultsAsString += '\n';
   });
 
+  //  once all results are processed, call the callback
+  //  the completed string is the parameter
   query.on('end', function(result) {
     connection.end();
     callback(resultsAsString);
