@@ -91,6 +91,7 @@ function getContentsFromDatabase(filter, callback) {
     console.log(err);
   });
 
+  // every result is added to the content string
   query.on('result', function(result) {
     resultsAsString += 'id: ' + result.id;
     resultsAsString += ', content: ' + result.content;
