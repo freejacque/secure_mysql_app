@@ -66,3 +66,11 @@ function handleRequest(request, response) {
     });
   }
 }
+function getContentsFromDatabase(filter, callback) {
+  var connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'root',
+    database: 'node'
+  });
+}
