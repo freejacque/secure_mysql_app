@@ -19,4 +19,7 @@ connection.query('CREATE TABLE passwords (id INT(11) AUTO_INCREMENT, ' +
     if(err) {
       console.log('Could not create table "passwords".');
     }
-  });
+  }
+);
+
+connection.query('INSERT INTO passwords (password) VALUES ("secret")');
