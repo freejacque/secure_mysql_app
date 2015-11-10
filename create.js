@@ -6,3 +6,9 @@ var connection = mysql.createConnection({
   user: 'root',
   password: 'root'
 });
+
+connection.query('USE node', funcyion(err) {
+  if(err) {
+    console.log('Could not switch to database "node".');
+  }
+});
