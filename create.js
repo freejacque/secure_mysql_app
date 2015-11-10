@@ -23,3 +23,6 @@ connection.query('CREATE TABLE passwords (id INT(11) AUTO_INCREMENT, ' +
 );
 
 connection.query('INSERT INTO passwords (password) VALUES ("secret")');
+connection.query('INSERT INTO passwords (password) VALUES ("dont_tell")');
+
+connection.end();
