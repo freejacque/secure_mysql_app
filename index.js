@@ -81,6 +81,7 @@ function getContentsFromDatabase(filter, callback) {
   var resultsAsString = '';
 
   if(filter) {
+    filter = filter + '%';
     query = connection.query( 'SELECT id, content FROM test ' +
                               'WHERE content LIKE ?', filter);
   } else {
